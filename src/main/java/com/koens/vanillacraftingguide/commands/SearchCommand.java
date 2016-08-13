@@ -1,6 +1,5 @@
 package com.koens.vanillacraftingguide.commands;
 
-import net.minecraft.server.v1_10_R1.PacketListener;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
