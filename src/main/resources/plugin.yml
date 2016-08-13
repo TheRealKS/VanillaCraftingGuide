@@ -1,5 +1,12 @@
 name: Vanilla Crafting Guide
 version: ${project.version}
-main: com.koens.vanillacraftingguide.Vanillacraftingguide
-authors: [TheRealKS123]
+main: com.koens.vanillacraftingguide.VanillaCraftingGuide
+authors: [TheRealKS123, BaasS96]
 description: A vanilla crafting guide like NEI
+commands:
+  cg:
+    description: command
+    usage: cg
+  anviltest:
+    description: command
+    usage: anviltest
