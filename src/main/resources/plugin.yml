@@ -1,0 +1,5 @@
+name: Vanilla Crafting Guide
+version: ${project.version}
+main: com.koens.vanillacraftingguide.Vanillacraftingguide
+authors: [TheRealKS123]
+description: A vanilla crafting guide like NEI
