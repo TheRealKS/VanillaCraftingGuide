@@ -12,10 +12,12 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class SearchCommand implements CommandExecutor {
 
     private List<ItemStack> results = new ArrayList<>();
+    private Map<Integer, List<ItemStack>> pages;
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -32,8 +34,18 @@ public class SearchCommand implements CommandExecutor {
                         results.add(result);
                     }
                 }
-                Inventory inv = Bukkit.createInventory(p, InventoryType.CHEST);
-                inv.setContents(results.toArray(new ItemStack[results.size()]));
+
+                Inventory inv = Bukkit.createInventory(p, InventoryType.CHEST, "Search items");
+                if (results.size() > 27) {
+                    int amountofpages = results.size() / 27;
+                    for (int i = 0; i <= amountofpages; i++) {
+                        List<ItemStack> itemStacks = results.subList(27 * i, (27 * i) + 27);
+                        pages.put(i, itemStacks);
+                    }
+                } else {
+                    pages.put(0, results);
+                }
+                inv.setContents(pages.get(0).toArray(new ItemStack[pages.get(0).size()]));
                 p.openInventory(inv);
                 inv.clear();
                 results.clear();

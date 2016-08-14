@@ -28,5 +28,6 @@ public class Anvil {
 
         Inventory inv = fakeAnvil.getBukkitView().getTopInventory();
 
+
     }
 }
